@@ -14,6 +14,7 @@ import android.widget.PopupWindow;
 
 import com.tencent.qcloud.tim.demo.DemoApplication;
 import com.tencent.qcloud.tim.demo.R;
+import com.tencent.qcloud.tim.demo.chat.StrangerChatActivity;
 import com.tencent.qcloud.tim.uikit.component.action.PopActionClickListener;
 import com.tencent.qcloud.tim.uikit.component.action.PopMenuAction;
 import com.tencent.qcloud.tim.uikit.component.action.PopMenuAdapter;
@@ -66,6 +67,12 @@ public class Menu {
                     mActivity.startActivity(intent);
                 }
 
+                //陌生人聊天
+                if (TextUtils.equals(action.getActionName(), mActivity.getResources().getString(R.string.stranger_chat))) {
+                    Intent intent = new Intent(DemoApplication.instance(), StrangerChatActivity.class);
+                    mActivity.startActivity(intent);
+                }
+
                 if (TextUtils.equals(action.getActionName(), mActivity.getResources().getString(R.string.create_private_group))) {
                     Intent intent = new Intent(DemoApplication.instance(), StartGroupChatActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -98,6 +105,12 @@ public class Menu {
             action.setActionClickListener(popActionClickListener);
             action.setIconResId(R.drawable.create_c2c);
             menuActions.add(action);
+
+            //添加陌生人聊天入口
+            action.setActionName(mActivity.getResources().getString(R.string.stranger_chat));
+            action.setActionClickListener(popActionClickListener);
+            action.setIconResId(R.drawable.ic_camera);
+            menuActions.add(action);
         }
 
         if (menuType == MENU_TYPE_CONTACT) {
@@ -112,6 +125,8 @@ public class Menu {
             action.setIconResId(R.drawable.ic_contact_join_group);
             action.setActionClickListener(popActionClickListener);
             menuActions.add(action);
+
+
         }
 
         if (menuType == MENU_TYPE_CONTACT) {
@@ -137,6 +152,9 @@ public class Menu {
         action.setIconResId(R.drawable.group_icon);
         action.setActionClickListener(popActionClickListener);
         menuActions.add(action);
+
+
+
 
         mActions.clear();
         mActions.addAll(menuActions);

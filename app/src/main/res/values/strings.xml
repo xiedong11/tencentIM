@@ -40,6 +40,7 @@
     <string name="contact_add">添加</string>
     <string name="user_id">对方ID</string>
     <string name="add_wording">验证消息</string>
+    <string name="stranger_chat">陌生人聊天</string>
 
     // 群信息相关
     <string name="tips_empty_group_member">请选择群成员</string>
