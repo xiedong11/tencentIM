@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.tencent.qcloud.tim.demo.login.LoginActivity;
 import com.tencent.qcloud.tim.demo.login.LoginForDevActivity;
 import com.tencent.qcloud.tim.demo.utils.Constants;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
@@ -42,7 +43,7 @@ public class BaseActivity extends Activity {
         editor.putBoolean(Constants.AUTO_LOGIN, autoLogin);
         editor.commit();
 
-        Intent intent = new Intent(context, LoginForDevActivity.class);
+        Intent intent = new Intent(context, LoginActivity.class);
         intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra(Constants.LOGOUT, true);
         context.startActivity(intent);

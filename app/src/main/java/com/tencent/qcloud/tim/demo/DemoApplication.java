@@ -37,6 +37,8 @@ import com.xiaomi.mipush.sdk.MiPushClient;
 
 import java.util.List;
 
+import cn.bmob.v3.Bmob;
+
 public class DemoApplication extends Application {
 
     private static final String TAG = DemoApplication.class.getSimpleName();
@@ -52,6 +54,8 @@ public class DemoApplication extends Application {
         DemoLog.i(TAG, "onCreate");
         super.onCreate();
         instance = this;
+        Bmob.initialize(this, "a02dec4ff232a28b9acf164e9dca6de0");
+        Bmob.resetDomain("https://open3.bmob.cn/8/");
         MultiDex.install(this);
         // bugly上报
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());

@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.tencent.qcloud.tim.demo.login.LoginActivity;
 import com.tencent.qcloud.tim.demo.login.LoginForDevActivity;
 import com.tencent.qcloud.tim.demo.utils.Constants;
 import com.tencent.qcloud.tim.demo.utils.DemoLog;
@@ -75,7 +76,7 @@ public class SplashActivity extends Activity {
     }
 
     private void startLogin() {
-        Intent intent = new Intent(SplashActivity.this, LoginForDevActivity.class);
+        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

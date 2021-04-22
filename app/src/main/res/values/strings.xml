@@ -57,5 +57,6 @@
     <string name="test_custom_message">查看详情>></string>
     <string name="video_call">视频通话</string>
     <string name="audio_call">音频通话</string>
+    <string name="app_info">智能聊天系统</string>
 
 </resources>
