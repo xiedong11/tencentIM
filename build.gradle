@@ -30,6 +30,17 @@ allprojects {
         options.addStringOption('encoding', 'UTF-8')
         options.addStringOption('charset', 'UTF-8')
     }
+
+    configurations.all{
+        resolutionStrategy {
+            force 'com.android.support:support-compat:27.1.1'
+            force 'androidx.core:core:1.0.0'
+        }
+    }
+
+    configurations.all {
+        exclude group: 'androidx.core', module: 'core'
+    }
 }
 
 ext {
@@ -42,6 +53,8 @@ ext {
     arguments = "-DANDROID_STL=c++_static"
     cppFlags = "-std=c++11"
 }
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
